@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=UTF-8">
+<script>
+pictures = new Array()
+for(i=0;i<3;i++)
+   {
+    pictures[i] = new Image()
+    if(i==0) pictures[i].src = "1.png"
+    if(i==1) pictures[i].src = "2.png"
+    if(i==2) pictures[i].src = "3.png"
+   }
+function l_image()
+   {
+    document.images[0].src = pictures[document.form1.item.selectedIndex].src
+   }
+</script>
+</head>
+<body>
+  <TR>
+    <th>
+      <form name=form1>
+      <select name=item onChange=l_image()>
+        <option selected>Дед Мороз
+        <option>Санта Крауз
+        <option>Пер Ноэль
+      </select>
+      </form>
+    </th>
+  </tr>
+  <tr>
+    <th ALIGN=CENTER VALIGN=CENTER>
+<IMG SRC="1.png" NAME="tool"></th>
+  </TR>
+</body>
+</html>

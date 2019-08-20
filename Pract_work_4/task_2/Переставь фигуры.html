@@ -1,0 +1,80 @@
+﻿<DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>HI!</title>
+  <script>
+   var ip = 1, jp = 0, vp = ""
+   var nm = [['button1', 'button2', 'button3'],['button4', 'button5', 'button6'],['button7', 'button8', 'button9']]
+
+   function onClick(i, j, v) {
+       if (v == "") {
+           if ((Math.abs(j-jp) == 1 && Math.abs(i-ip) == 2) || 
+                      (Math.abs(j-jp) == 2 && Math.abs(i-ip) == 1)) {
+               document.all(nm[i][j]).value = vp
+               document.all(nm[ip][jp]).value = ""
+           }
+       }
+       c = String.fromCharCode(9822)
+       if (document.all(nm[1][0]).value == "" && document.all(nm[1][1]).value == ""
+               && document.all(nm[1][2]).value == "" && document.all(nm[2][0]).value == c
+               && document.all(nm[2][1]).value == c && document.all(nm[2][2]).value == c) {
+           alert("Молодец!")
+           window.location.reload(true)
+       }
+       ip = i
+       jp = j
+       vp = document.all(nm[i][j]).value
+   }
+  </script>
+ </head>
+ <body>
+  <table border=6 align="center">  
+  <caption>Переставь коней</caption>    
+  <tr>  
+   <td>3</td>   
+   <td><input type="button" name="button1" value=&#9822; style="width: 50px;
+height: 50px; font-size: 32px" onclick="onClick(0, 0, this.value)"> 
+   </td>  
+   <td><input type="button" name="button2" value=&#9822; 
+style="background: white; width: 50px ;  height: 50px;
+font-size: 32px" onclick="onClick(0, 1, this.value)">
+   </td> 
+   <td><input type="button" name="button3" value=&#9822; style="width: 50px;
+height: 50px; font-size: 32px" onclick="onClick(0, 2, this.value)">
+   </td> 
+  </tr>  
+  <tr>  
+   <td>2</td>  
+   <td><input type="button" name="button4" value=""; style="background: white; 
+width: 50px;  height: 50px; font-size: 32px" onclick="onClick(1, 0, this.value)">
+   </td>  
+   <td><input type="button" name="button5" value=""; style=" width: 50px;
+height: 50px; font-size: 32px" onclick="onClick(1, 1, this.value)">
+   </td> 
+   <td><input type="button" name="button6" value=""; style="background: white;
+width: 50px; height: 50px; font-size: 32px" onclick="onClick(1, 2, this.value)" >
+   </td>  
+  </tr>  
+  <tr>  
+   <td>1</td>  
+   <td><input type="button" name="button7" value=&#9816; style="width: 50px;
+height: 50px; font-size: 32px" onclick="onClick(2, 0, this.value)"> 
+   </td>  
+   <td><input type="button" name="button8" value=&#9816; style="background: white; 
+width: 50px ;  height: 50px; font-size: 32px" onclick="onClick(2, 1, this.value)">
+   </td> 
+   <td><input type="button" name="button9" value=&#9816; style="width: 50px;
+height: 50px; font-size: 32px" onclick="onClick(2, 2, this.value)"> 
+   </td> 
+  </tr>    
+  <tr>   
+   <td> 
+   </td>  
+   <th>a</th>  
+   <th>b</th>  
+   <th>c</th>    
+  </tr> 
+  </table> 
+ </body>
+</html>
